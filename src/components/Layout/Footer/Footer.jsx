@@ -171,7 +171,7 @@ function Footer(props) {
                                 <div className="footer_Fcard_cols-2_servesLink_iconRight">
 
                                 </div>
-                                Komitetu Obrony Robotników 39C
+                                Złota 75A/7, 00-819 Warszawa, Poland
                             </a>
                             <a className="footer_Fcard_cols-2_servesLink">
                                 <div className="footer_Fcard_cols-2_servesLink_iconRight"></div>

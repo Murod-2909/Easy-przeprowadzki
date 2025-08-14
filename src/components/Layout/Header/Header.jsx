@@ -57,7 +57,7 @@ function Header(props) {
                 <li className="header_head_linkContact_col-10_widget_item_list">
                   <IoLocation className="header_head_linkContact_col-10_widget_item_list_icons" />
                   <span className="header_head_linkContact_col-10_widget_item_list_text">
-                    Komitetu Obrony Robotników 39C
+                   Złota 75A/7, 00-819 Warszawa, Poland
                   </span>
                 </li>
               </ul>

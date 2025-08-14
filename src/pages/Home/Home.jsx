@@ -13,13 +13,14 @@ const Home = () => {
         <div style={{overflow:"hidden"}}>
             <Hero/>
              <Services/>
+            <Feedback/>
               <ChooseUs/>
             <WeAre/>
             <MoveNeeds/>
            
             <Package/>
            
-            <Feedback/>
+
         </div>
     );
 };

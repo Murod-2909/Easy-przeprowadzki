@@ -6,11 +6,9 @@ import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import {Autoplay, Navigation} from "swiper/modules";
 import {FaStar} from "react-icons/fa";
-import {IoIosArrowForward} from "react-icons/io";
 import Needs from "./Needs/Needs";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import {getService} from "../../reduxToolkit/services";
 import Spinner from "../Spinner";
 import {getFeedBack} from "../../reduxToolkit/FeedBackSlice";
 
@@ -30,10 +28,11 @@ const Feedback = () => {
         <Spinner/>
     }
     return (
+        <>
         <div className="feedback">
             <div className="container">
-                <div className="headTitle d-flex">{t("feedback")}</div>
-                <div className="bigTitle d-flex" >{t("what")}</div>
+                <div className="headTitle d-flex mt">{t("feedback")}</div>
+                <div className="bigTitle d-flex mt" >{t("what")}</div>
                 {/*<p className="feedback_fdes">Per aenean auctor pellentesque a quam quis habitant mus semper nostra*/}
                 {/*    ultrices. Per odio finibus rhoncus sit cubilia duis leo maximus ad.</p>*/}
                 <div>
@@ -72,13 +71,14 @@ const Feedback = () => {
                     >
                         {feedBackData.map((item, index) => (
                             <SwiperSlide className="feedback_slider" key={index}>
+                                <div className="feedback_slider_namesF">{item.fullname}</div>
+                                <p style={{marginBottom:"20px"}}>23.03.2025</p>
                                 <div className="feedback_slider_star d-flex">
                                     {[...Array(item.rating)].map((_, i) => (
                                         <FaStar key={i} />
                                     ))}
                                 </div>
                                 <p className="feedback_slider_Fdes">{item[`message_${lan}`]}</p>
-                                <div className="feedback_slider_namesF">{item.fullname}</div>
                             </SwiperSlide>
                         ))}
 
@@ -86,8 +86,10 @@ const Feedback = () => {
                     </Swiper>
                 </div>
             </div>
-           <Needs/>
+
         </div>
+            <Needs/>
+        </>
     );
 };
 
