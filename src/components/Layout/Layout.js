@@ -7,6 +7,7 @@ import { LuPhoneCall } from "react-icons/lu";
 
 import "./cookieBanner.scss"; // SCSS ulash
 import {useTranslation} from "react-i18next";
+import PromoBanner from "../../PromoBanner";
 
 const Layout = () => {
    const {t} = useTranslation();
@@ -39,6 +40,7 @@ const Layout = () => {
 
   return (
     <div className={pathname === "/" ? "page-wrapper1" : "page-wrapper2"}>
+      <PromoBanner />
       <Header />
       <div className="page-content">
         <Outlet />

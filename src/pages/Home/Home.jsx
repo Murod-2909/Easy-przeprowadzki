@@ -9,20 +9,18 @@ import MoveNeeds from "../../components/MoveNeeds/MoveNeeds";
 
 const Home = () => {
 
-    return (
-        <div style={{overflow:"hidden"}}>
-            <Hero/>
-             <Services/>
-            <Feedback/>
-              <ChooseUs/>
-            <WeAre/>
-            <MoveNeeds/>
-           
-            <Package/>
-           
+    return (<div style={{overflow: "hidden"}}>
+        <Hero/>
+        <Services/>
+        <Feedback/>
+        <ChooseUs/>
+        <WeAre/>
+        <MoveNeeds/>
 
-        </div>
-    );
+        <Package/>
+
+
+    </div>);
 };
 
 export default Home;
