@@ -1,6 +1,6 @@
 import React from 'react';
 import "./chooseUs.scss";
-import chooseImg from "../../assets/images/choose.jpg";
+import chooseImg from "../../assets/images/choose1.jpg";
 import {IoChatboxEllipsesOutline} from "react-icons/io5";
 import { GrShield } from "react-icons/gr";
 import { BiSupport } from "react-icons/bi";
