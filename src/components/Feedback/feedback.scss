@@ -1,14 +1,11 @@
 @import "../../assets/style/global";
 
 .feedback {
-  background-image: url("../../assets/images/bg-feedback.jpg");
+  background:#F6F6F6;
   margin-top: 50px;
   overflow-x: hidden;
   padding: 90px 0px 180px;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+
   text-align: center;
   &::before{
     content: '';
@@ -22,7 +19,7 @@
   }
   .mt{
     margin-bottom: 50px;
-    color: white !important;
+    color: #000000 !important;
   }
   &_fdes {
     width: 60%;
