@@ -64,11 +64,6 @@ function Header(props) {
             </div>
           </div>
           <div className="header_head_linkContact_col-2">
-            {/* <div className="header_head_linkContact_col-2_right-social">
-                                    <a href="#" className="social-icon" target="_blank">
-                                        <FaTwitter/>
-                                    </a>
-                                     </div> */}
             <div className="header_head_linkContact_col-2_right-social">
               <a
                 href="https://www.facebook.com/people/Easy-Przeprowadzki/61574572778465/?mibextid=wwXIfr&rdid=rIsE3tnrzelpS1gc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1E1FMHm5tS%2F%3Fmibextid%3DwwXIfr"

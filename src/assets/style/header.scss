@@ -100,37 +100,7 @@
           font-weight: 400;
           border-radius: 50%;
 
-          // &::after {
-          //   position: absolute;
-          //   content: "";
-          //   top: 0;
-          //   left: 0;
-          //   right: 0;
-          //   height: 100%;
-          //   background-color: $fff-color;
-          //   -webkit-transition-delay: .1s;
-          //   transition-delay: .1s;
-          //   -webkit-transition-timing-function: ease-in-out;
-          //   transition-timing-function: ease-in-out;
-          //   -webkit-transition-duration: .4s;
-          //   transition-duration: .4s;
-          //   -webkit-transition-property: all;
-          //   transition-property: all;
-          //   opacity: 1;
-          //   -webkit-transform-origin: top;
-          //   transform-origin: top;
-          //   -webkit-transform-style: preserve-3d;
-          //   transform-style: preserve-3d;
-          //   color: $primary-color;
-          //   transform: scaleY(0);
-          //   z-index: -1;
-          // }
 
-          // &:hover:after {
-          //   opacity: 1;
-
-          //   transform: scaleY(1);
-          // }
         }
 
         &_locationButton {
@@ -166,10 +136,10 @@
     &.scrolled {
       position: fixed;
       top: 0;
-      background-color: $fff-color; // header_head background rangiga teng bo‘lishi kerak
+      background-color: $fff-color;
       color: $primary-color;
       transition: all 0.5s ease-in-out;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); // oraliq uchun box-shadow qo‘shsa chiroyli bo‘ladi
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
       .header_navbar_nav_list-10_menu_items {
         color: $primary-color;
