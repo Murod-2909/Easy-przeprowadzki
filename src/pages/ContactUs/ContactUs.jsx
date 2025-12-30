@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import "./contact.scss";
 import PageHero from "../../components/PageHero";
 import {FiFacebook} from "react-icons/fi";
@@ -28,10 +28,18 @@ const ContactUs = () => {
         formRef.current.reset();
     };
     const title = `${t("contactUs")}`;
+    const formSectionRef = useRef(null);
+
+    useEffect(() => {
+        formSectionRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    }, []);
     return (
         <>
             <PageHero title={title}/>
-            <div className="contact">
+            <div className="contact" ref={formSectionRef}>
                 <div className="container">
                     <div className="row">
                         <div className="contact_col-55">
