@@ -2,21 +2,18 @@ import React, {useEffect} from 'react';
 import "./feedback.scss";
 import "swiper/css";
 import {Swiper, SwiperSlide} from "swiper/react";
-import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import {Autoplay, Navigation} from "swiper/modules";
 import {FaStar} from "react-icons/fa";
 import Needs from "./Needs/Needs";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import Spinner from "../Spinner";
 import {getFeedBack} from "../../reduxToolkit/FeedBackSlice";
 
 const Feedback = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const lan = useSelector((state) => state.language.language);
-    const loading = useSelector((state) => state.feedBackSlice.loading);
     const feedBackData = useSelector((state) => state.feedBackSlice.feedBackData);
 
 
@@ -24,9 +21,6 @@ const Feedback = () => {
     useEffect(() => {
         dispatch(getFeedBack());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
     return (
         <>
         <div className="feedback">

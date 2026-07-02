@@ -7,7 +7,6 @@ import {AiFillCaretRight} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getService} from "../../../reduxToolkit/services";
-import Spinner from "../../Spinner";
 
 const region =[
     {
@@ -33,11 +32,11 @@ const region =[
     },
     {
         title_en:"Removals Warsaw Praga Południe",
-        title_pl:"Przeprowadzki Warszawa Ochota"
+        title_pl:"Przeprowadzki Warszawa Praga Południe"
     },
     {
         title_en:"Removals Warsaw Praga Północ",
-        title_pl:"Przeprowadzki Warszawa Ochota"
+        title_pl:"Przeprowadzki Warszawa Praga Północ"
     },
     {
         title_en:"Removals Warsaw Rembertów",
@@ -88,7 +87,6 @@ function Footer(props) {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const lan = useSelector((state) => state.language.language);
-    const loading = useSelector((state) => state.servicesSlice.loading);
     const servicesData = useSelector((state) => state.servicesSlice.servicesData);
 
 
@@ -96,9 +94,6 @@ function Footer(props) {
     useEffect(() => {
         dispatch(getService());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
     return (
         <div className="footer">
             <div className="footer_havePlan">
@@ -113,7 +108,7 @@ function Footer(props) {
                                     style={{width: "13px", height: "13px"}}/></a>
                             </div>
                             <div className="footer_havePlan_hbox_col-5">
-                                <img className="footer_havePlan_hbox_col-5_fImg" src={footerImg} alt=""/>
+                                <img className="footer_havePlan_hbox_col-5_fImg" src={footerImg} loading="lazy" alt="Planujesz przeprowadzkę? Easy Przeprowadzki"/>
                             </div>
                         </div>
                     </div>
@@ -124,7 +119,7 @@ function Footer(props) {
                     <div className=" padd">
                         <div className="footer_Fcard_cols-4">
                             <div className="footer_Fcard_cols-4_log">
-                                <img width="100%" src={one} alt=""/>
+                                <img width="100%" src={one} loading="lazy" alt="Easy Przeprowadzki logo"/>
                             </div>
                             <p style={{color: "#FFFFFF", marginBottom: "25px"}}>{t("ease")} 😊🚚
                             </p>

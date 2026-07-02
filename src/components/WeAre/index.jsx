@@ -5,7 +5,6 @@ import {IoCheckbox} from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {useDispatch, useSelector} from "react-redux";
-import Spinner from "../Spinner";
 import {getAbout} from "../../reduxToolkit/AboutSlice";
 import {useTranslation} from "react-i18next";
 
@@ -14,7 +13,6 @@ const WeAre = () => {
     const dispatch = useDispatch();
     const lan = useSelector((state) => state.language.language);
     const aboutData = useSelector((state) => state.aboutSlice.aboutData);
-    const loading = useSelector((state) => state.aboutSlice.loading);
 
     useEffect(() => {
         AOS.init({
@@ -28,9 +26,6 @@ const WeAre = () => {
     useEffect(() => {
         dispatch(getAbout());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
     return (
         <div className="weAre">
             <div className="container">
@@ -42,8 +37,8 @@ const WeAre = () => {
                                     <img className="imgs" width="100%" src={item.image[0].image} alt="we are"/>
                                 </div>
                                 <div className="weAre_col-6_imgBig">
-                                    <img data-aos="fade-right" className="we2" src={item.image[1].image} alt=""/>
-                                    <img data-aos="fade-left" className="we2" src={item.image[2].image} alt=""/>
+                                    <img data-aos="fade-right" className="we2" src={item.image[1].image} loading="lazy" alt="Zespół Easy Przeprowadzki"/>
+                                    <img data-aos="fade-left" className="we2" src={item.image[2].image} loading="lazy" alt="Easy Przeprowadzki w pracy"/>
                                 </div>
                             </div>
 

@@ -4,7 +4,6 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {IoIosArrowForward} from "react-icons/io";
 
 import "swiper/css";
-import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import {Navigation, Autoplay} from "swiper/modules";
 import AOS from "aos";
@@ -12,14 +11,12 @@ import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getHero} from "../../reduxToolkit/HeroSlice";
-import Spinner from "../Spinner";
 import {Link} from "react-router";
 
 const Hero = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const heroData = useSelector((state) => state.heroSlice.heroData);
-    const loading = useSelector((state) => state.heroSlice.loading);
 
     useEffect(() => {
         AOS.init({
@@ -34,9 +31,6 @@ const Hero = () => {
     useEffect(() => {
         dispatch(getHero());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
     return (
         <div className="hero">
             <div className="hero_desc">
@@ -56,16 +50,15 @@ const Hero = () => {
                 loop={true} // Infinite loop
                 className="hero_carousel"
             >
-                {heroData?.map((item, i) => (
-                    <div key={i}>
-                        {item?.image?.map((img, index) => (
-                            <SwiperSlide key={item.id}>
-                                <div className="hero_carousel_wrapper" >
-                                    <img className="hero_carousel_wrapper_picture" src={img?.image} alt=""/>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </div>
+                {heroData?.flatMap((item) => item?.image || []).map((img, index) => (
+                    <SwiperSlide key={index}>
+                        <div className="hero_carousel_wrapper" >
+                            <img className="hero_carousel_wrapper_picture" src={img?.image}
+                                 alt="Przeprowadzki Warszawa – Easy Przeprowadzki"
+                                 loading={index === 0 ? "eager" : "lazy"}
+                                 fetchPriority={index === 0 ? "high" : "auto"}/>
+                        </div>
+                    </SwiperSlide>
                 ))}
 
             </Swiper>
