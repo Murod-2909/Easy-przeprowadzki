@@ -150,28 +150,28 @@ function Footer(props) {
                         <div className="footer_Fcard_cols-2">
                             <h2 className="footer_Fcard_cols-2_fserves">{t("warsaw")}</h2>
                             {region.map((region, index) => (
-                                <a href="#" className="footer_Fcard_cols-2_servesLink" key={index}>
+                                <span className="footer_Fcard_cols-2_servesLink" key={index}>
                                     <div className="footer_Fcard_cols-2_servesLink_iconRight">
                                         <AiFillCaretRight className="airight"/>
                                     </div>
                                     {region[`title_${lan}`]}
-                                </a>
+                                </span>
                             ))}
 
 
                         </div>
                         <div className="footer_Fcard_cols-2">
                             <h2 className="footer_Fcard_cols-2_fserves">{t("getIn")}</h2>
-                            <a href="#" className="footer_Fcard_cols-2_servesLink">
+                            <span className="footer_Fcard_cols-2_servesLink">
                                 <div className="footer_Fcard_cols-2_servesLink_iconRight">
 
                                 </div>
                                 Złota 75A/7, 00-819 Warszawa, Poland
-                            </a>
-                            <a className="footer_Fcard_cols-2_servesLink">
+                            </span>
+                            <span className="footer_Fcard_cols-2_servesLink">
                                 <div className="footer_Fcard_cols-2_servesLink_iconRight"></div>
                                NIP: 5273166825
-                            </a>
+                            </span>
                             <a href="mailto:easyprzeprowadzka@gmail.com" className="footer_Fcard_cols-2_servesLink">
                                 <div className="footer_Fcard_cols-2_servesLink_iconRight"></div>
                                 easyprzeprowadzka@gmail.com
@@ -188,7 +188,7 @@ function Footer(props) {
                         </div>
                         <div className="footer_Fcard_bcol-6">
                             <div className="end">
-                                <a href="#" className="footer_Fcard_bcol-6_police">Copyright © 2025 Easy Przeprowadzki</a>
+                                <span className="footer_Fcard_bcol-6_police">Copyright © 2025 Easy Przeprowadzki</span>
 
                             </div>
                         </div>

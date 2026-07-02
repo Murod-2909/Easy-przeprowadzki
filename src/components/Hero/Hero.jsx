@@ -6,8 +6,6 @@ import {IoIosArrowForward} from "react-icons/io";
 import "swiper/css";
 import "swiper/css/navigation";
 import {Navigation, Autoplay} from "swiper/modules";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getHero} from "../../reduxToolkit/HeroSlice";
@@ -18,15 +16,6 @@ const Hero = () => {
     const dispatch = useDispatch();
     const heroData = useSelector((state) => state.heroSlice.heroData);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            offset: 100,
-            easing: "ease-in-out",
-            delay: 80,
-            once: true,
-        });
-    }, []);
 
     useEffect(() => {
         dispatch(getHero());

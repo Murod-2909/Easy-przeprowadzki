@@ -2,8 +2,6 @@ import React, {useEffect} from 'react';
 import "./services.scss";
 import {FaMapLocationDot} from "react-icons/fa6";
 import {IoMdArrowDropright} from "react-icons/io";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getService} from "../../reduxToolkit/services";
@@ -14,15 +12,6 @@ const Services = () => {
     const lan = useSelector((state) => state.language.language);
     const servicesData = useSelector((state) => state.servicesSlice.servicesData);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            offset: 100,
-            easing: "ease-in-out",
-            delay: 50,
-            once: true,
-        });
-    }, []);
     useEffect(() => {
         dispatch(getService());
     }, [dispatch]);

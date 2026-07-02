@@ -2,8 +2,6 @@ import React, {useEffect} from 'react';
 import "./style.scss";
 
 import {IoCheckbox} from "react-icons/io5";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import {useDispatch, useSelector} from "react-redux";
 import {getAbout} from "../../reduxToolkit/AboutSlice";
 import {useTranslation} from "react-i18next";
@@ -14,15 +12,6 @@ const WeAre = () => {
     const lan = useSelector((state) => state.language.language);
     const aboutData = useSelector((state) => state.aboutSlice.aboutData);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000, // Animatsiya davomiyligi (ms)
-            offset: 100, // Elementdan yuqori chekkasiga masofa
-            easing: "ease-in-out", // Animatsiya effekti
-            delay: 50, // Animatsiya kechikishi (ms)
-            once: true, // Animatsiya faqat bir marta ishlashi uchun
-        });
-    }, []);
     useEffect(() => {
         dispatch(getAbout());
     }, [dispatch]);
