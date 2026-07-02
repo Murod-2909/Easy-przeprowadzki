@@ -6,8 +6,6 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import logo from "../../../assets/images/300.png";
 import { Link } from "react-router";
 import Language from "../../Language/language";
@@ -28,15 +26,6 @@ function Header(props) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  useEffect(() => {
-    AOS.init({
-      duration: 1500, // Animatsiya davomiyligi (ms)
-      offset: 100, // Elementdan yuqori chekkasiga masofa
-      easing: "ease-in-out", // Animatsiya effekti
-      delay: 100, // Animatsiya kechikishi (ms)
-      once: true, // Animatsiya faqat bir marta ishlashi uchun
-    });
-  }, []);
 
   return (
     <div className="header">
@@ -45,15 +34,17 @@ function Header(props) {
           <div className="header_head_linkContact_col-10">
             <div className="header_head_linkContact_col-10_widget">
               <ul className="header_head_linkContact_col-10_widget_item">
-                <a
-                  href="tel:+48509931555"
-                  className="header_head_linkContact_col-10_widget_item_list"
-                >
-                  <FaPhoneAlt className="header_head_linkContact_col-10_widget_item_list_icons" />
-                  <span className="header_head_linkContact_col-10_widget_item_list_text">
-                    +48509931555
-                  </span>
-                </a>
+                <li>
+                  <a
+                    href="tel:+48509931555"
+                    className="header_head_linkContact_col-10_widget_item_list"
+                  >
+                    <FaPhoneAlt className="header_head_linkContact_col-10_widget_item_list_icons" />
+                    <span className="header_head_linkContact_col-10_widget_item_list_text">
+                      +48509931555
+                    </span>
+                  </a>
+                </li>
                 <li className="header_head_linkContact_col-10_widget_item_list">
                   <IoLocation className="header_head_linkContact_col-10_widget_item_list_icons" />
                   <span className="header_head_linkContact_col-10_widget_item_list_text">
@@ -69,6 +60,8 @@ function Header(props) {
                 href="https://www.facebook.com/people/Easy-Przeprowadzki/61574572778465/?mibextid=wwXIfr&rdid=rIsE3tnrzelpS1gc&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1E1FMHm5tS%2F%3Fmibextid%3DwwXIfr"
                 className="social-icon"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Easy Przeprowadzki na Facebooku"
               >
                 <FaFacebookSquare />
               </a>
@@ -78,6 +71,8 @@ function Header(props) {
                 href="https://www.instagram.com/easy_przeprowadzki_pl?igsh=aGQyMDFiaWV5cHp6&utm_source=qr"
                 className="social-icon"
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Easy Przeprowadzki na Instagramie"
               >
                 <FaInstagram />
               </a>
@@ -89,6 +84,7 @@ function Header(props) {
                 className="social-icon"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Napisz na WhatsApp"
               >
                 <FaWhatsapp />
               </a>
@@ -113,6 +109,7 @@ function Header(props) {
               <button
                 onClick={() => setSheet(true)}
                 className={`header_navbar_nav_list-10_hamburger`}
+                aria-label="Otwórz menu"
               >
                 <AiOutlineMenu width={24} height={24} />
               </button>
@@ -133,6 +130,7 @@ function Header(props) {
                   <button
                     onClick={() => setSheet(false)}
                     className="header_navbar_nav_list-10_menu_items_close"
+                    aria-label="Zamknij menu"
                   >
                     <AiOutlineClose />
                   </button>

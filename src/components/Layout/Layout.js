@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, Outlet } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { LuPhoneCall } from "react-icons/lu";
@@ -15,6 +17,20 @@ const Layout = () => {
   const [cookies, setCookie] = useCookies(["myCookieConsent"]);
   const [showBanner, setShowBanner] = useState(false);
   const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animatsiya davomiyligi (ms)
+      offset: 100, // Elementdan yuqori chekkasiga masofa
+      easing: "ease-in-out", // Animatsiya effekti
+      delay: 50, // Animatsiya kechikishi (ms)
+      once: true, // Animatsiya faqat bir marta ishlashi uchun
+    });
+  }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [pathname]);
 
   useEffect(() => {
     if (pathname === "/" && !cookies.myCookieConsent) {

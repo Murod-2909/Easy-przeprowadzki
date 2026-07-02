@@ -1,8 +1,6 @@
 import React, {useEffect} from 'react';
 import "./package.scss";
 import {FaCheck} from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getPricing} from "../../reduxToolkit/PricingSlice";
@@ -23,15 +21,6 @@ const Package = () => {
         dispatch(getPricing());
     }, [dispatch]);
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000, // Animatsiya davomiyligi (ms)
-            offset: 100, // Elementdan yuqori chekkasiga masofa
-            easing: "ease-in-out", // Animatsiya effekti
-            delay: 50, // Animatsiya kechikishi (ms)
-            once: true, // Animatsiya faqat bir marta ishlashi uchun
-        });
-    }, []);
     return (
         <div className="package">
             <div className="container">

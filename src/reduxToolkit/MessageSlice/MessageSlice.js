@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {sendMessage} from "./index";
 
 const initialState = {
-    loading: true,
+    loading: false,
     messageData: [],
     error: null,
 };

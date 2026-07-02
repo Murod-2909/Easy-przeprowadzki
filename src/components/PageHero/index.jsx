@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import "./style.scss";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import hero1 from "../../assets/images/about.jpg";
 import { AiFillCaretRight } from "react-icons/ai";
 import { useLocation } from "react-router";
@@ -25,15 +23,6 @@ const {t} = useTranslation();
         return require("../../assets/images/default.jpg");
     }
   };
-  useEffect(() => {
-    AOS.init({
-      duration: 1500, // Animatsiya davomiyligi (ms)
-      offset: 100, // Elementdan yuqori chekkasiga masofa
-      easing: "ease-in-out", // Animatsiya effekti
-      delay: 80, // Animatsiya kechikishi (ms)
-      once: true, // Animatsiya faqat bir marta ishlashi uchun
-    });
-  }, []);
   return (
     <div className="pageHero">
       <div
