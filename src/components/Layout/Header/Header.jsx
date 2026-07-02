@@ -85,9 +85,10 @@ function Header(props) {
 
             <div className="header_head_linkContact_col-2_right-social">
               <a
-                href="tel:+48509 93 15 55"
+                href="https://wa.me/48509931555"
                 className="social-icon"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaWhatsapp />
               </a>
@@ -104,7 +105,7 @@ function Header(props) {
                   width="100%"
                   className="header_navbar_nav_list-2_logos"
                   src={logo}
-                  alt=""
+                  alt="Easy Przeprowadzki logo"
                 />
               </Link>
             </div>
@@ -126,7 +127,7 @@ function Header(props) {
                       width="100%"
                       className="header_navbar_nav_list-2_logos"
                       src={logo}
-                      alt=""
+                      alt="Easy Przeprowadzki logo"
                     />
                   </div>
                   <button

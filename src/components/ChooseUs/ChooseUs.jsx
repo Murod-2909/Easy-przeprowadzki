@@ -66,7 +66,7 @@ const ChooseUs = () => {
                         </div>
                     </div>
                     <div className="chooseUs_col-4">
-                        <img className="chooseUs_col-4_chooseImg" src={chooseImg} alt=""/>
+                        <img className="chooseUs_col-4_chooseImg" src={chooseImg} loading="lazy" alt="Dlaczego Easy Przeprowadzki"/>
                     </div>
                 </div>
             </div>

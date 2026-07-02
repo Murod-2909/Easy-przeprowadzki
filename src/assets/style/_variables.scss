@@ -1,0 +1,28 @@
+$primary-color: #214562;
+$secondary-color: #101518;
+$background-color: #f8f9fa;
+$text-color: #56626C;
+$accent-color: #4ECB71;
+$fff-color: #FFFFFF;
+$breakpoints: (
+        mobile: 480px,
+        tablet: 768px,
+        laptop: 1024px,
+        desktop: 1200px
+);
+
+@mixin responsive($device) {
+  @if $device == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == laptop {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}

@@ -1,18 +1,5 @@
 @import "utilities";
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kumbh+Sans:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-$primary-color: #214562;
-$secondary-color: #101518;
-$background-color: #f8f9fa;
-$text-color: #56626C;
-$accent-color: #4ECB71;
-$fff-color: #FFFFFF;
-$breakpoints: (
-        mobile: 480px,
-        tablet: 768px,
-        laptop: 1024px,
-        desktop: 1200px
-);
+@import "variables";
 
 * {
   margin: 0;
@@ -25,6 +12,11 @@ html, body {
   height: 100%;
   font-family: "Montserrat", serif;
   scroll-behavior: smooth;
+}
+
+.page-wrapper1,
+.page-wrapper2 {
+  overflow-x: hidden;
 }
 
 a {
@@ -158,20 +150,4 @@ p{
 
 ul, ol {
   list-style: none;
-}
-
-@mixin responsive($device) {
-  @if $device == mobile {
-    @media (max-width: 480px) {
-      @content;
-    }
-  } @else if $device == tablet {
-    @media (max-width: 768px) {
-      @content;
-    }
-  } @else if $device == laptop {
-    @media (max-width: 1024px) {
-      @content;
-    }
-  }
 }

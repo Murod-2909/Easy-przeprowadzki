@@ -5,7 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import Spinner from "../Spinner";
 import {getPricing} from "../../reduxToolkit/PricingSlice";
 import { RxCrossCircled } from "react-icons/rx";
 
@@ -13,7 +12,6 @@ const Package = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const lan = useSelector((state) => state.language.language);
-    const loading = useSelector((state) => state.pricingSlice.loading);
     const priceData = useSelector((state) => state.pricingSlice.priceData);
     const selectedPackage = priceData.find(item => item.id === "d5e64c9e-9ff9-4d44-99e8-94b1af403e8c");
     const selectedPackagePro = priceData.find(item => item.id === "1ce763c5-7d90-470d-83df-1d4dae895c29");
@@ -24,9 +22,6 @@ const Package = () => {
     useEffect(() => {
         dispatch(getPricing());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
 
     useEffect(() => {
         AOS.init({

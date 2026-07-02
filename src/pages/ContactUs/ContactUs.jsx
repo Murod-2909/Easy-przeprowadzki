@@ -107,7 +107,9 @@ const ContactUs = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <a href="https://web.whatsapp.com/"
+                                <a href="https://wa.me/48509931555"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
                                    className="contact_col-55_information_gets">{t("queto")}</a>
                             </div>
                         </div>
@@ -130,7 +132,7 @@ const ContactUs = () => {
                                     </div>
                                     <div className="form-control">
                                         <label htmlFor="phone" className="form-list">{t("phone")}</label>
-                                        <input name="phone" id="phone" type="number" placeholder={t("phone")}
+                                        <input name="phone" id="phone" type="tel" placeholder={t("phone")}
                                                className="form-input"
                                                onChange={(e) =>
                                                    setSendDataMessage((prev) => ({

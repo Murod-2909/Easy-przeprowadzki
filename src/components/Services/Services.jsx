@@ -6,14 +6,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import Spinner from "../Spinner";
 import {getService} from "../../reduxToolkit/services";
 
 const Services = () => {
     const {t} = useTranslation();
     const dispatch = useDispatch();
     const lan = useSelector((state) => state.language.language);
-    const loading = useSelector((state) => state.servicesSlice.loading);
     const servicesData = useSelector((state) => state.servicesSlice.servicesData);
 
     useEffect(() => {
@@ -28,9 +26,6 @@ const Services = () => {
     useEffect(() => {
         dispatch(getService());
     }, [dispatch]);
-    if (loading) {
-        <Spinner/>
-    }
     return (
         <div className="services">
             <div className="container">
@@ -56,7 +51,7 @@ const Services = () => {
                                  key={index}>
                                 <div style={{position: "relative", zIndex: "2"}}>
                                     <div className="services_cards_col-3_iconBox">
-                                        <img src={service.icon}  alt=""/>
+                                        <img src={service.icon} loading="lazy" alt={service[`title_${lan}`] || "Usługa przeprowadzki"}/>
                                     </div>
                                     <div className="servicesTitle d-flex">
                                         {service[`title_${lan}`]}
