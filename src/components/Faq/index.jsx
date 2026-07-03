@@ -1,13 +1,30 @@
 import React from 'react';
 import "./faq.scss";
-import { BiSupport } from "react-icons/bi";
 import Accordion from "../Accordion/Accordion";
 import {useTranslation} from "react-i18next";
 
 const Faq = () => {
     const {t} = useTranslation();
+
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            ["whyChoose", "chooseDes"],
+            ["howWe", "howDes"],
+            ["whatPay", "payDes"],
+            ["other", "otherDes"],
+            ["aboutCon", "aboutConDes"],
+        ].map(([q, a]) => ({
+            "@type": "Question",
+            "name": t(q),
+            "acceptedAnswer": {"@type": "Answer", "text": t(a)},
+        })),
+    };
+
     return (
         <div className="faq">
+            <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
             <div className="container">
                 <div className="row">
                     <div className="faq_col-2">

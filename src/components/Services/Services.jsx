@@ -50,9 +50,8 @@ const Services = () => {
                                     </p>
                                     <div className="d-flex">
                                         <a href="tel:+48509931555" className="href">
-                                            Learn More
+                                            {t("learnMore")}
                                             <IoMdArrowDropright/>
-
                                         </a>
                                     </div>
                                 </div>

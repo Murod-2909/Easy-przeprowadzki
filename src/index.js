@@ -11,9 +11,11 @@ import i18n from "./Services/in18";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CookiesProvider } from "react-cookie";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <ErrorBoundary>
     <CookiesProvider>
     <I18nextProvider i18n={i18n}>
         <Suspense fallback="">
@@ -24,4 +26,5 @@ root.render(
         </Suspense>
     </I18nextProvider>
     </CookiesProvider>
+    </ErrorBoundary>
 );

@@ -288,4 +288,16 @@
       }
     }
   }
+
+  // Mobilda tumanlar ro'yxati 2 ustunda — footer balandligini qisqartiradi
+  @media (max-width: 768px) {
+    .footer_regions {
+      .footer_Fcard_cols-2_fserves {
+        grid-column: 1 / -1;
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 12px;
+    }
+  }
 }

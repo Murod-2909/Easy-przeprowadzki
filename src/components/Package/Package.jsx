@@ -35,8 +35,8 @@ const Package = () => {
 
 
                         <div className="package_col-33_dollar">
+                            <h2 className="package_col-33_dollar_dprice">{String(priceData[1]?.price).replace(/(\d{3})(?=\d)/, '$1-')} </h2>
                             <h2 className="package_col-33_dollar_IconD">zł/h</h2>
-                            <h2 className="package_col-33_dollar_dprice"> {String(priceData[1]?.price).replace(/(\d{3})(?=\d)/, '$1-')}</h2>
                         </div>
                         <h2 className="package_col-33_month">{t("person1")}</h2>
 
@@ -64,14 +64,14 @@ const Package = () => {
                     </div>
                     <div className="package_col-33" data-aos="fade-up">
 
-                        <div className="package_col-33_popul">Popular</div>
+                        <div className="package_col-33_popul">{t("popular")}</div>
 
                         <h4 className="package_col-33_packing">{priceData[0]?.[`title_${lan}`]}</h4>
 
 
                         <div className="package_col-33_dollar">
+                            <h2 className="package_col-33_dollar_dprice pp">{String(priceData[0]?.price).replace(/(\d{3})(?=\d)/, '$1-')} </h2>
                             <h2 className="package_col-33_dollar_IconD dd">zł/h</h2>
-                            <h2 className="package_col-33_dollar_dprice pp"> {String(priceData[0]?.price).replace(/(\d{3})(?=\d)/, '$1-')}</h2>
                         </div>
                         <h2 className="package_col-33_month dd">{t("person2")}</h2>
 
@@ -100,10 +100,10 @@ const Package = () => {
                         <h4 className="package_col-33_packing">{priceData[2]?.[`title_${lan}`]}</h4>
 
                         <div className="package_col-33_dollar">
-                            <h2 className="package_col-33_dollar_IconD">zł/h</h2>
                             <h2 className="package_col-33_dollar_dprice">
                                 {String(priceData[2]?.price).replace(/(\d{3})(?=\d)/, '$1-')}
                             </h2>
+                            <h2 className="package_col-33_dollar_IconD">zł/h</h2>
                         </div>
                         <h2 className="package_col-33_month">{t("person3")}</h2>
 

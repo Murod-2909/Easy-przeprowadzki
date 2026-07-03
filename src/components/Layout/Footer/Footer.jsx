@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {IoIosArrowForward} from "react-icons/io";
+import {Link} from "react-router-dom";
 import footerImg from "../../../assets/images/Footer.png";
 import one from "../../../assets/images/Easy.jpg";
 import {BiSupport} from "react-icons/bi";
@@ -147,7 +148,7 @@ function Footer(props) {
 
 
                         </div>
-                        <div className="footer_Fcard_cols-2">
+                        <div className="footer_Fcard_cols-2 footer_regions">
                             <h2 className="footer_Fcard_cols-2_fserves">{t("warsaw")}</h2>
                             {region.map((region, index) => (
                                 <span className="footer_Fcard_cols-2_servesLink" key={index}>
@@ -183,8 +184,8 @@ function Footer(props) {
                 <div className="container">
                     <div className="row">
                         <div className="footer_Fcard_bcol-6">
-                            <a href="#" className="footer_Fcard_bcol-6_police">Privacy Policy</a>
-                            <a href="#" className="footer_Fcard_bcol-6_police">Terms and Conditions</a>
+                            <Link to="/privacy-policy" className="footer_Fcard_bcol-6_police">{t("privacyPolicy")}</Link>
+                            <Link to="/terms" className="footer_Fcard_bcol-6_police">{t("termsLink")}</Link>
                         </div>
                         <div className="footer_Fcard_bcol-6">
                             <div className="end">

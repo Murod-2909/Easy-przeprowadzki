@@ -15,6 +15,8 @@ const Service = () => {
     const description = `${t("srDes")}`;
     return (
         <>
+            <title>{t("seoServicesT")}</title>
+            <meta name="description" content={t("seoServicesD")}/>
             <PageHero title={title} description={description} />
             <Services />
             <Needs/>

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./videoSection.scss";
 import {useTranslation} from "react-i18next";
+import {Link} from "react-router-dom";
 
 const VideoSection = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const VideoSection = () => {
                         <p className="video-description">
                             {t("suspen")}
                         </p>
-                        <button className="discover-btn">{t("dis")}</button>
+                        <Link to="/contact" className="discover-btn" style={{display: "inline-block", textAlign: "center"}}>{t("dis")}</Link>
                     </div>
 
                     {/* Modal */}
