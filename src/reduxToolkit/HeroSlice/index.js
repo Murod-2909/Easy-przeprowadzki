@@ -1,8 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import {GET_HERO} from "../../Services/api/utilis";
+import {fetchJson} from "../../Services/api/fetchJson";
 
 export const getHero = createAsyncThunk("hero/get", async () => {
-    return await axios.get(GET_HERO, {
-    }).then((res) => res.data);
+    return fetchJson(GET_HERO);
 });

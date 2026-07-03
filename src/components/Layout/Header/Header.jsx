@@ -98,7 +98,8 @@ function Header(props) {
             <div className="header_navbar_nav_list-2">
               <Link to="/">
                 <img
-                  width="100%"
+                  width={301}
+                  height={61}
                   className="header_navbar_nav_list-2_logos"
                   src={logo}
                   alt="Easy Przeprowadzki logo"
@@ -121,7 +122,8 @@ function Header(props) {
                 <li className="header_navbar_nav_list-10_menu_items hamburger-header">
                   <div className="header_navbar_nav_list-10_menu_items_header">
                     <img
-                      width="100%"
+                      width={301}
+                      height={61}
                       className="header_navbar_nav_list-2_logos"
                       src={logo}
                       alt="Easy Przeprowadzki logo"

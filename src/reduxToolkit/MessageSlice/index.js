@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import { MESSAGE_SEND } from "../../Services/api/utilis";
 import { toast } from "react-toastify";
 
@@ -10,22 +9,26 @@ export const sendMessage = createAsyncThunk("message/post", async (sendDataMessa
             formData.append(key, sendDataMessage[key]);
         });
 
-        const response = await axios.post(MESSAGE_SEND, formData, {
+        const response = await fetch(MESSAGE_SEND, {
+            method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded", // 🟢 MUHIM!
             },
+            body: formData.toString(),
         });
 
-        if (response.status === 200) {
-            toast.success("Twoja wiadomość została wysłana pomyślnie!", {
-                position: "top-right",
-            });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
         }
-        return response.data;
+
+        toast.success("Twoja wiadomość została wysłana pomyślnie!", {
+            position: "top-right",
+        });
+        return response.json().catch(() => ({}));
     } catch (error) {
         toast.error("Błąd podczas wysyłania wiadomości!", {
             position: "top-right",
         });
-        return rejectWithValue(error.response?.data);
+        return rejectWithValue(error.message);
     }
 });

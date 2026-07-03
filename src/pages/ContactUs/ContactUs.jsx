@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import "./contact.scss";
 import PageHero from "../../components/PageHero";
 import {FiFacebook} from "react-icons/fi";
@@ -30,13 +30,6 @@ const ContactUs = () => {
     };
     const title = `${t("contactUs")}`;
     const formSectionRef = useRef(null);
-
-    useEffect(() => {
-        formSectionRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    }, []);
     return (
         <>
             <title>{t("seoContactT")}</title>
