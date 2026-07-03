@@ -11,6 +11,8 @@ const AboutUs = () => {
     const description = `${t("aboutMore")}`;
     return (
         <>
+            <title>{t("seoAboutT")}</title>
+            <meta name="description" content={t("seoAboutD")}/>
             <PageHero title={title} description={description} />
             <WeAre/>
             <MoveNeeds/>

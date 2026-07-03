@@ -14,6 +14,8 @@ const About = lazy(() => import("./pages/AboutUs/aboutUs"));
 const Service = lazy(() => import("./pages/Service/Service"));
 const Price = lazy(() => import("./pages/Price/Price"));
 const Contact = lazy(() => import("./pages/ContactUs/ContactUs"));
+const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"));
+const Terms = lazy(() => import("./pages/Legal/Terms"));
 
 const routes = [
   { path: "/", element: Home },
@@ -21,6 +23,8 @@ const routes = [
   { path: "/services", element: Service },
   { path: "/price", element: Price },
   { path: "/contact", element: Contact },
+  { path: "/privacy-policy", element: PrivacyPolicy },
+  { path: "/terms", element: Terms },
 ];
 
 const RoutesContainer = () => (

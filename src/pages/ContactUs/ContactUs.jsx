@@ -8,6 +8,7 @@ import {useTranslation} from "react-i18next";
 import {GrInstagram} from "react-icons/gr";
 import {useDispatch, useSelector} from "react-redux";
 import {sendMessage} from "../../reduxToolkit/MessageSlice";
+import {Link} from "react-router-dom";
 
 const ContactUs = () => {
     const {t} = useTranslation();
@@ -38,6 +39,8 @@ const ContactUs = () => {
     }, []);
     return (
         <>
+            <title>{t("seoContactT")}</title>
+            <meta name="description" content={t("seoContactD")}/>
             <PageHero title={title}/>
             <div className="contact" ref={formSectionRef}>
                 <div className="container">
@@ -180,6 +183,15 @@ const ContactUs = () => {
                                                       message: e.target.value,
                                                   }))
                                               }/>
+                                </div>
+                                <div className="form-control" style={{width: "100%", flexDirection: "row", alignItems: "flex-start", gap: "10px", display: "flex", marginTop: "12px"}}>
+                                    <input type="checkbox" id="rodo" required style={{marginTop: "4px", accentColor: "#4ECB71"}}/>
+                                    <label htmlFor="rodo" style={{fontSize: "13px", lineHeight: "1.5", color: "#56626C"}}>
+                                        {t("rodoConsent")}{" "}
+                                        <Link to="/privacy-policy" style={{color: "#2D984B", textDecoration: "underline"}}>
+                                            {t("privacyPolicy")}
+                                        </Link>
+                                    </label>
                                 </div>
                                 <button type="submit" className="sendForm" disabled={loading} style={loading ? {opacity: 0.6, cursor: "wait"} : undefined}>{t("sendM")}</button>
                             </form>

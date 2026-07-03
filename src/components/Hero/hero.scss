@@ -2,7 +2,6 @@
 .hero {
   overflow: hidden;
   position: relative;
-  opacity: 0.9; // Biroz tiniqlikni oshirish
   z-index: 3;
   &_desc {
     position: absolute;
@@ -23,6 +22,7 @@
       text-transform: capitalize;
       font-size: 42px;
       margin-bottom: 10px;
+      text-shadow: 0 2px 14px rgba(16, 21, 24, 0.45);
     }
     &_text {
       text-align: center;
@@ -68,7 +68,12 @@
         width: 100%;
         height: 100%;
         z-index: 2;
-        background-image: linear-gradient(180deg, #214562 0%, #21456280 14%);
+        background-image: linear-gradient(
+          180deg,
+          rgba(33, 69, 98, 0.65) 0%,
+          rgba(33, 69, 98, 0.35) 45%,
+          rgba(33, 69, 98, 0.45) 100%
+        );
       }
 
       &_picture {

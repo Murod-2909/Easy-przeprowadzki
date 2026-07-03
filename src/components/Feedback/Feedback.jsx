@@ -66,8 +66,7 @@ const Feedback = () => {
                         {feedBackData.map((item, index) => (
                             <SwiperSlide className="feedback_slider" key={index}>
                                 <div className="feedback_slider_namesF">{item.fullname}</div>
-                                <p style={{marginBottom:"20px"}}>23.03.2025</p>
-                                <div className="feedback_slider_star d-flex">
+                                                                <div className="feedback_slider_star d-flex">
                                     {[...Array(item.rating)].map((_, i) => (
                                         <FaStar key={i} />
                                     ))}
