@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "./style.scss";
 import { FaBoxes } from "react-icons/fa";
 import { FiTruck } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import CountUp from "react-countup";
+import Counter from "./Counter";
 import {useTranslation} from "react-i18next";
 const Facts = () => {
     const {t} = useTranslation()
@@ -27,7 +27,7 @@ const Facts = () => {
                                 <div className="elementor-counter">
                                     <div className="counter-title">{t("local")}</div>
                                     <div className="number-couter">
-                                        <CountUp start={0} end={100} duration={3} suffix=" +" />
+                                        <Counter end={100} duration={3} suffix=" +"/>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@ const Facts = () => {
                                 <div className="elementor-counter">
                                     <div className="counter-title">{t("million")}</div>
                                     <div className="number-couter">
-                                        <CountUp start={0} end={100} duration={3} suffix=" +" />
+                                        <Counter end={100} duration={3} suffix=" +"/>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const Facts = () => {
                                 <div className="elementor-counter">
                                     <div className="counter-title">{t("client")}</div>
                                     <div className="number-couter">
-                                        <CountUp start={0} end={100} duration={3} suffix=" +" />
+                                        <Counter end={100} duration={3} suffix=" +"/>
                                     </div>
                                 </div>
                             </div>

@@ -109,7 +109,7 @@ function Footer(props) {
                                     style={{width: "13px", height: "13px"}}/></a>
                             </div>
                             <div className="footer_havePlan_hbox_col-5">
-                                <img className="footer_havePlan_hbox_col-5_fImg" src={footerImg} loading="lazy" alt="Planujesz przeprowadzkę? Easy Przeprowadzki"/>
+                                <img className="footer_havePlan_hbox_col-5_fImg" width={700} height={831} src={footerImg} loading="lazy" alt="Planujesz przeprowadzkę? Easy Przeprowadzki"/>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ function Footer(props) {
                     <div className=" padd">
                         <div className="footer_Fcard_cols-4">
                             <div className="footer_Fcard_cols-4_log">
-                                <img width="100%" src={one} loading="lazy" alt="Easy Przeprowadzki logo"/>
+                                <img width={625} height={292} style={{width: "100%", height: "auto"}} src={one} loading="lazy" alt="Easy Przeprowadzki logo"/>
                             </div>
                             <p style={{color: "#FFFFFF", marginBottom: "25px"}}>{t("ease")} 😊🚚
                             </p>

@@ -1,8 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import {GET_ABOUT} from "../../Services/api/utilis";
+import {fetchJson} from "../../Services/api/fetchJson";
 
 export const getAbout = createAsyncThunk("about/get", async () => {
-    return await axios.get(GET_ABOUT, {
-    }).then((res) => res.data);
+    return fetchJson(GET_ABOUT);
 });
