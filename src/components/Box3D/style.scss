@@ -1,0 +1,93 @@
+// Aylanuvchi 3D karton ko'chish qutisi — sof CSS, kutubxonasiz
+$kraft: #c89b6a;
+$kraft-side: #b98c5c;
+$kraft-dark: #a87d4f;
+$box: 140px;
+$half: 70px;
+
+.box3d-scene {
+  perspective: 1000px;
+  width: $box + 40px;
+  height: $box + 50px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  .box3d {
+    width: $box;
+    height: $box;
+    margin: 25px auto 0;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: box3d-spin 10s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .box3d_face {
+    position: absolute;
+    width: $box;
+    height: $box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $kraft-dark;
+    backface-visibility: hidden;
+
+    &.front  { background: $kraft;      transform: translateZ($half); }
+    &.back   { background: $kraft;      transform: rotateY(180deg) translateZ($half); }
+    &.right  { background: $kraft-side; transform: rotateY(90deg) translateZ($half); }
+    &.left   { background: $kraft-side; transform: rotateY(-90deg) translateZ($half); }
+    &.top    { background: $kraft-dark; transform: rotateX(90deg) translateZ($half); }
+    &.bottom { background: $kraft-dark; transform: rotateX(-90deg) translateZ($half); }
+
+    // Quti ustidagi skotch chizig'i
+    &.top::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 30px;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.38);
+    }
+
+    .box3d_brand {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #16334b;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .box3d_fragile {
+      margin-top: 7px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #b03a2e;
+      text-transform: uppercase;
+      border: 1.5px solid #b03a2e;
+      padding: 2px 7px;
+      transform: rotate(-6deg);
+    }
+  }
+}
+
+@keyframes box3d-spin {
+  from { transform: rotateX(-18deg) rotateY(0deg); }
+  to   { transform: rotateX(-18deg) rotateY(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box3d-scene .box3d {
+    animation: none;
+    transform: rotateX(-18deg) rotateY(-28deg);
+  }
+}
