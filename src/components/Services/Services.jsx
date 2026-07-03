@@ -4,6 +4,7 @@ import {FaMapLocationDot} from "react-icons/fa6";
 import {IoMdArrowDropright} from "react-icons/io";
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
+import TiltCard from "../TiltCard";
 import {getService} from "../../reduxToolkit/services";
 
 const Services = () => {
@@ -27,7 +28,7 @@ const Services = () => {
                 <div className="services_cards">
                     <div className="row" style={{flexWrap:"wrap"}}>
                         {servicesData.map((service, index) => (
-                            <div className="services_cards_col-3" data-aos={
+                            <TiltCard className="services_cards_col-3" data-aos={
                                 index % 3 === 0
                                     ? 'fade-right'
                                     : index % 3 === 1
@@ -55,7 +56,7 @@ const Services = () => {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </TiltCard>
 
                         ))}
                     </div>

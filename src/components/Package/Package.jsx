@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {getPricing} from "../../reduxToolkit/PricingSlice";
 import { RxCrossCircled } from "react-icons/rx";
+import TiltCard from "../TiltCard";
 
 const Package = () => {
     const {t} = useTranslation();
@@ -30,7 +31,7 @@ const Package = () => {
 
                 <div className="row">
 
-                    <div className="package_col-33" data-aos="fade-right">
+                    <TiltCard className="package_col-33" data-aos="fade-right">
                         <h4 className="package_col-33_packing">{priceData[1]?.[`title_${lan}`]}</h4>
 
 
@@ -61,8 +62,8 @@ const Package = () => {
                         <a href="tel:+48509931555" className="package_col-33_gets">
                             {t("discover")}
                         </a>
-                    </div>
-                    <div className="package_col-33" data-aos="fade-up">
+                    </TiltCard>
+                    <TiltCard className="package_col-33" data-aos="fade-up">
 
                         <div className="package_col-33_popul">{t("popular")}</div>
 
@@ -95,8 +96,8 @@ const Package = () => {
                         <a href="tel:+48509931555" className="package_col-33_gets bbb">
                             {t("discover")}
                         </a>
-                    </div>
-                    <div className="package_col-33" data-aos="fade-left">
+                    </TiltCard>
+                    <TiltCard className="package_col-33" data-aos="fade-left">
                         <h4 className="package_col-33_packing">{priceData[2]?.[`title_${lan}`]}</h4>
 
                         <div className="package_col-33_dollar">
@@ -123,7 +124,7 @@ const Package = () => {
                         <a href="tel:+48509931555" className="package_col-33_gets">
                             {t("discover")}
                         </a>
-                    </div>
+                    </TiltCard>
                 </div>
                 <h2 className="bigTitle" style={{marginTop:"50px"}}>{t("table")}</h2>
             </div>
