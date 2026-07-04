@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {IoIosArrowForward} from "react-icons/io";
 import {Link} from "react-router-dom";
 import footerImg from "../../../assets/images/Footer.png";
-import one from "../../../assets/images/Easy.jpg";
+import one from "../../../assets/images/EasyWhite.png";
 import {BiSupport} from "react-icons/bi";
 import {AiFillCaretRight} from "react-icons/ai";
 import {useTranslation} from "react-i18next";
